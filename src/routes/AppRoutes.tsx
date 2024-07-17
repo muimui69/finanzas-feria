@@ -8,12 +8,14 @@ import { AnualidadDiferida } from '@/pages/anualidades/diferidas';
 import { RatioEndeudamiento } from '@/pages/ratios/endeudamiento';
 import { RatioLiquidez } from '@/pages/ratios/liquidez';
 import { RatioRentabilidad } from '@/pages/ratios/rentabilidad';
+import Hero from '@/components/hero';
 
 export const AppRoutes = () => {
     return (
         <>
             <MenubarLayout />
             <Routes>
+                <Route path="/" Component={Hero} />
                 <Route path="/interes-simple" Component={InteresSimple} />
                 <Route path="/interes-compuesto" Component={InteresCompuesto} />
                 <Route path="/anualidad-anticipada" Component={AnualidadAnticipada} />
