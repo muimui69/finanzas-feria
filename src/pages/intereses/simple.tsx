@@ -48,12 +48,11 @@ export function InteresSimple() {
       console.log(resultado)
       setResultado(resultado);
     }
-
   };
 
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
-      <Card className="w-[350px]">
+      <Card className="w-[350px] shadow-2xl">
         <CardHeader>
           <CardTitle>Interes simple</CardTitle>
           <CardDescription>Rellene los campos correctamente.</CardDescription>
