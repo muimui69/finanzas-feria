@@ -26,7 +26,8 @@ export function InteresSimple() {
     tiempo: ''
   })
 
-  const [resultado, setResultado] = useState<number | null>(null);
+  const [resultado, setResultado] = useState<number | null>(0);
+
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;

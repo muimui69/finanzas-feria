@@ -21,18 +21,19 @@ interface ISimple {
 
 export function InteresCompuesto() {
 
-  const [interesSimple, setInteresSimple] = useState<ISimple>({
+  const [interesCompuesto, setInteresCompuesto] = useState<ISimple>({
     capital: '',
     tasa: '',
     tiempo: '',
     capitalizacion:''
   })
 
-  const [resultado, setResultado] = useState<number | null>(null);
+  const [resultado, setResultado] = useState<number | null>(0);
+
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setInteresSimple(prevData => ({
+    setInteresCompuesto(prevData => ({
       ...prevData,
       [name]: value,
     }));
@@ -42,10 +43,10 @@ export function InteresCompuesto() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const capitalNum = parseFloat(interesSimple.capital as string);
-    const tasaNum = parseFloat(interesSimple.tasa as string);
-    const periodoNum = parseFloat(interesSimple.tiempo as string);
-    const capitalizaionNum = parseFloat(interesSimple.capitalizacion as string);
+    const capitalNum = parseFloat(interesCompuesto.capital as string);
+    const tasaNum = parseFloat(interesCompuesto.tasa as string);
+    const periodoNum = parseFloat(interesCompuesto.tiempo as string);
+    const capitalizaionNum = parseFloat(interesCompuesto.capitalizacion as string);
     if (!isNaN(capitalNum) && !isNaN(tasaNum) && !isNaN(periodoNum) && !isNaN(capitalizaionNum)) {
       const resultado = calcularInteresCompuesto(capitalNum, tasaNum, periodoNum,capitalNum);
       console.log(resultado)
@@ -69,7 +70,7 @@ export function InteresCompuesto() {
                   id="name"
                   name="capital"
                   placeholder="Capital de tu empresa"
-                  value={interesSimple.capital}
+                  value={interesCompuesto.capital}
                   onChange={handleChange}
                 />
               </div>
@@ -79,7 +80,7 @@ export function InteresCompuesto() {
                   id="name"
                   name="tasa"
                   placeholder="Tasa de interes"
-                  value={interesSimple.tasa}
+                  value={interesCompuesto.tasa}
                   onChange={handleChange}
                 />
               </div>
@@ -89,7 +90,7 @@ export function InteresCompuesto() {
                   id="name"
                   name="tiempo"
                   placeholder="Numero de periodos"
-                  value={interesSimple.tiempo}
+                  value={interesCompuesto.tiempo}
                   onChange={handleChange}
                 />
               </div>
@@ -100,7 +101,7 @@ export function InteresCompuesto() {
                   id="name"
                   name="capitalizacion"
                   placeholder="Numero de capitalizaciones"
-                  value={interesSimple.capitalizacion}
+                  value={interesCompuesto.capitalizacion}
                   onChange={handleChange}
                 />
               </div>
