@@ -56,7 +56,7 @@ export function MenubarLayout() {
                             <MenubarTrigger className="cursor-pointer" >Ratios</MenubarTrigger>
                             <MenubarContent>
                                 <MenubarItem className="cursor-pointer"
-                                    onClick={() => navigate("/ratio-enduedamiento")}
+                                    onClick={() => navigate("/ratio-endeudamiento")}
                                 >
                                     Endudamiento
                                 </MenubarItem>
